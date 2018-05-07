@@ -1,0 +1,95 @@
+/*这是各个页面都要引用的公共的css*/
+
+/*顶部top*/
+.indextop>*{margin:0;padding:0;height:30px;line-height: 30px;}
+.indextop h4,.indextop ul{display:inline-block;}
+.indextop ul li a{display:block;margin:0;padding:0;height:30px;line-height: 30px;;}
+.indextop ul li a.marginR{margin-right:10px;}
+/*超小屏幕显示的效果*/
+@media only screen  and (max-width: 768px) {
+	.indextop{display:none}
+	#youshi .row>div div:first-child{margin-left: 33%;}
+	#youshi .row>div div:last-child{margin-left: 28%;font-size:16px}
+	.textPaddingTop{position: relative;top:-100px;}
+	.jumbotron h1{font-size: 30px !important;;}
+	.jumbotron h4{font-size: 16px !important;;}
+}
+
+/*小屏幕显示的效果*/
+@media only screen and (min-width:768px ) {
+	.jumbotron h1{font-size: 30px !important;;}
+	.jumbotron h4{font-size: 16px !important;;}
+	.info-content h4{font-size: 16px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+}
+
+/*中等屏幕*/
+@media only screen and (min-width:992px ) {
+	.jumbotron h1{font-size: 33px !important;;}
+	.jumbotron h4{font-size: 17px !important;;}
+	.info-content h4{font-size: 18px !important;;}
+	
+}
+
+/*导航*/
+/*删除navbar下边的外边距*/
+.navbar{margin-bottom:0px;}
+.navbar-brand {margin:0 ;padding:0;}
+.navbar-brand img{height:50px ;width:auto;}
+
+/*课程列表*/
+.itemheader{margin-top:30px;margin-bottom:30px;}
+.itemheader span{display: inline-block;font-size: 36px;font-family: "微软雅黑";font-weight: bold;}
+.itemheader span:first-child,.itemheader span:last-child{width:100px;height:2px;background: #ccc;margin-bottom: 10px;}
+.col-lg-4{margin-bottom:10px;}
+.textPaddingTop{padding-top:20px;}
+
+
+/*管理*/
+.tab1{margin-top:30px;}
+.tab1 .container-fluid{background: #eee;}
+.tab1 .one,.tab1 .two{padding-top:58px;padding-bottom: 58px;;}
+
+/*脚部*/
+footer{background: #666;height:86px;padding-top:23px;}
+footer *{text-align: center;font-size: 18px;color:#eee;}
+
+/*注册部分*/
+#loginandregister{margin-top:30px;}
+.mypadding{padding-top:20px;}
+
+
+/*巨幕*/
+.jumbotron{background: url(../img/bg.jpg);}
+.jumbotron h1{font-size: 26px;color:#fff;font-family: "微软雅黑";font-weight: normal;}
+.jumbotron h4{font-size: 15px;color:#fff;font-family: "微软雅黑";font-weight: normal;}
+
+/*列表*/
+#information{background: #eee;padding:40px 0;}
+#information .info-content{background: #fff;margin:0 0 20px 0px;padding-top:20px;padding-bottom:20px;box-shadow: 2px 2px 3px #ccc;}
+#information h4{color:#333;padding:2px;font-size:14px;;}
+#information p{line-height: 1.6s;}
+
+#info-right{background: #fff;box-shadow: 2px 2px 3px #ccc;}
+#info-right blockquote{margin:0;padding:0}
+#info-right h2{font-size: 20px;color: #333;padding:5px;}
+
+
+/*合作企业案例*/
+#case h4{font-family: "微软雅黑";font-size: 16px;color:#333; font-weight: bold;}
+#case p{font-family: "微软雅黑";font-size: 14px;color:#333; line-height: 1.4;}
+
+/*关于我们*/
+.about{background: #fff;box-shadow: 2px 0px 3px #ccc;}
+.about section{margin-bottom:30px;}
+.about h3{ font-family: "微软雅黑";font-size: 20px;color:#333; font-weight: bold;}
+.about p{ font-family: "微软雅黑";font-size: 16px;color:#333; line-height: 1.6;text-indent: 2em;}
+
+
+
+
+
+
+
+
+
+

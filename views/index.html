@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>bootstrap项目主页</title>
+		<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+	</head>
+
+	<body>
+		<!--顶部top-->
+		<div class="container indextop">
+			<h4>中国移动互联网教育品牌</h4>
+			<ul class="nav nav-pills pull-right">
+				<li>
+					<a href="###" class="text-muted marginR">火星人网校</a>
+				</li>
+				<li>
+					<a href="###" class="text-muted marginR">联系我们</a>
+				</li>
+				<li>
+					<a href="###" class="text-muted marginR">加入收藏</a>
+				</li>
+				<li>
+					<a href="###" class="marginR"><img src="img/qq.png" /></a>
+				</li>
+				<li>
+					<a href="###" class="marginR"><img src="img/wechat.png" /></a>
+				</li>
+				<li>
+					<a href="###" class="marginR"><img src="img/weibo.png" /></a>
+				</li>
+				<li>400-025-8883</li>
+			</ul>
+		</div>
+		<!--顶部top-->
+		<!--导航-->
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarcollapse1">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand">
+						<img src="img/news_logo.png" />
+					</a>
+				</div>
+
+				<div id="navbarcollapse1" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="###">首页</a>
+						</li>
+						<li>
+							<a href="###">团队</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">课程体系<span class="caret"></span></a>
+							<ul id="submenu" class="dropdown-menu">
+								<li>
+									<a href="###">web前端</a>
+								</li>
+								<li>
+									<a href="###">室内设计</a>
+								</li>
+								<li>
+									<a href="###">室外设计</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="###">工业设计</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="###">平面设计</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+					<form action="" class="navbar-form navbar-left">
+						<div class="input-group">
+							<input type="search" class="form-control" placeholder="找课程" />
+							<div class="input-group-btn">
+								<button class="btn btn-primary">提交</button>
+							</div>
+						</div>
+					</form>
+
+					<ul class="nav navbar-nav navbar-right">
+						<% if(name) {%>
+							<li>
+								<a href="/publish.html">发布博客</a>
+							</li>
+							<li>
+								<a href="/user/userpage/<%=uid%>"><%=name%></a>
+							</li>
+							<li>
+								<a href="/user/logout">退出</a>
+							</li>
+							<%}else{%>
+								<li>
+									<a href="/login.html">登录</a>
+								</li>
+								<li>
+									<a href="###">注册</a>
+								</li>
+						<%}%>
+
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">关注我们<span class="caret"></span></a>
+							<ul id="submenu" class="dropdown-menu">
+								<li>
+									<a href="###" id="yonganli" data-toggle="popover" data-placement="left" data-trigger="hover" title="联系电话：" data-content="刘老师:12345678954">永安里校区</a>
+								</li>
+								<li>
+									<a href="###">国贸校区</a>
+								</li>
+								<li>
+									<a href="###">中关村校区</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!--导航-->
+		<!--巨幕-->
+		<div class="jumbotron">
+			<div class="container">
+				<hgroup>
+					<h1>火星人培训学校资讯</h1>
+					<h4>学校的最新动态、资源等。。。。。。</h4>
+				</hgroup>
+			</div>
+		</div>
+		<!--巨幕结束-->
+
+		<!--列表-->
+		<div id="information">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-md-8 ">
+						<!--左边-->
+						<div class="container-fluid " style="padding:0">
+
+							<% for(var i=0;i<data.length;i++){%>
+							<div class="row info-content">
+								<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+									<img src="/upload/<%=data[i]['img']%>" class="img-responsive" />
+								</div>
+								<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+									<h4><%=data[i]["title"]%></h4>
+									<p>
+										<span>作者：<%=data[i]["author"]%></span>
+										<button class="btn btn-link">发布时间<span class="badge"><%=data[i]["timer"]%></span></button>
+										<button class="btn btn-link">阅读量 <span class="badge"><%=data[i]["yuedu"]%></span></button>
+									</p>
+									<p class="hidden-xs">
+										<%=data[i]["content"]%>
+										<a href="">阅读全文</a>
+									</p>
+									<p>
+										<button class="btn btn-link">赞<span class="badge" style="background:red"><%=data[i]["zan"]%></span></button>
+										<button class="btn btn-link">踩 <span class="badge"style="background:red"><%=data[i]["cai"]%></span></button>
+									</p>
+								</div>
+							</div>
+							<%}%>
+
+
+						</div>
+						<div>
+							<ul class="pagination" id="pagination"></ul>
+						</div>
+
+
+
+					</div>
+					<div class="col-md-4 col-lg-4 hidden-sm hidden-xs " id="info-right">
+						<blockquote>
+							<h2>热门资讯</h2>
+						</blockquote>
+						<div class="container-fluid">
+								<div class="row ">
+									<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" style="margin:12px 0px;padding:0">
+										<img src="img/info1.jpg" class="img-responsive" />
+									</div>
+									<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+										<h4>苹果四寸手机为何要配置强大的A9处理器？</h4>
+										<span>admin 2016/10/10</span>
+									</div>
+							</div>
+							<div class="row ">
+									<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" style="margin:12px 0px;padding:0">
+										<img src="img/info2.jpg" class="img-responsive" />
+									</div>
+									<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+										<h4>苹果四寸手机为何要配置强大的A9处理器？</h4>
+										<span>admin 2016/10/10</span>
+									</div>
+							</div>
+							<div class="row ">
+									<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" style="margin:12px 0px;padding:0">
+										<img src="img/info1.jpg" class="img-responsive" />
+									</div>
+									<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+										<h4>苹果四寸手机为何要配置强大的A9处理器？</h4>
+										<span>admin 2016/10/10</span>
+									</div>
+							</div>
+							<div class="row ">
+									<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" style="margin:12px 0px;padding:0">
+										<img src="img/info3.jpg" class="img-responsive" />
+									</div>
+									<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+										<h4>苹果四寸手机为何要配置强大的A9处理器？</h4>
+										<span>admin 2016/10/10</span>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--列表结束-->
+		<!--脚部部分-->
+		<footer >
+			<div class="container">
+				<p>人才培训|合作事宜|版权投诉</p>
+				<p>备案号：京123 2009-2019火星人培训网站。powered by bootsrap</p>
+			</div>
+		</footer>
+		<script src="dist/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+				<script>
+				//在页面上展示分页栏
+								if($("#pagination")){
+								//数据的总数
+									var pagecount = <%= pagecount %>;
+//									每页有多少条数据
+									var pagesize = <%= pagesize %>;
+									var currentpage = <%= currentpage %>;
+										//总页数
+									var counts,pagehtml="";
+									
+									//计算出来应该有多少页
+									if(pagecount%pagesize==0){
+										counts = parseInt(pagecount/pagesize);
+									}else{
+										counts = parseInt(pagecount/pagesize)+1;
+									}
+									
+									
+									
+									//只有一页内容
+									if(pagecount<=pagesize){pagehtml="";}
+									
+									
+									
+									//大于一页内容
+									if(pagecount>pagesize){
+										if(currentpage>1){
+											pagehtml+= '<li><a href="/'+(currentpage-1)+'">上一页</a></li>';
+										}
+										for(var i=0;i<counts;i++){
+											if(i>=(currentpage-3) && i<(currentpage+3)){
+												if(i==currentpage-1){
+													pagehtml+= '<li class="active"><a href="/'+(i+1)+'">'+(i+1)+'</a></li>';
+												}else{
+													pagehtml+= '<li><a href="/'+(i+1)+'">'+(i+1)+'</a></li>';
+												}
+
+											}
+										}
+										if(currentpage<counts){
+											pagehtml+= '<li><a href="/'+(currentpage+1)+'">下一页</a></li>';
+										}
+									}
+									$("#pagination").html(pagehtml);
+								}
+
+						</script>
+	</body>
+
+</html>
